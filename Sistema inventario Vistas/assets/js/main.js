@@ -1,4 +1,39 @@
-const showMenu = (toggleId, navbarId, bodyId)=>{
+$(document).ready(){
+  const toggle = document.getElementById(toggleId);
+  const navbar = document.getElementById(navbarId);
+  const bodypadding = document.getElementById(bodyId);
+  const linkCollapse = document.getElementsByClassName('collapse__link');
+  const rotate = collapseMenu.previousElementSibling;
+
+  var active, activeDrop = 0;
+  const showMenu = ()=>{
+    if(active==0){
+      navbar.addClass('expander');
+    
+      bodypadding.addClass('body-pd');
+      
+    }else{
+      if(activeDrop>0){
+        linkCollapse.removeClass('showCollapse'); 
+        rotate.removeClass('rotate')
+      }
+      navbar.removeClass('expander');
+      bodypadding.removeClass('body-pd');
+    }
+  }
+
+  const showMenuDrop = ()=>{
+    
+  }
+  
+
+
+
+
+}
+
+
+/*const showMenu = (toggleId, navbarId, bodyId)=>{
     const toggle = document.getElementById(toggleId),
     navbar = document.getElementById(navbarId),
     bodypadding = document.getElementById(bodyId)
@@ -11,9 +46,9 @@ const showMenu = (toggleId, navbarId, bodyId)=>{
       })
     }
   }
-  showMenu('nav-toggle','navbar','body-pd')
+  showMenu('nav-toggle','navbar','body-pd')*/
   
-  /*===== LINK ACTIVE  =====*/ 
+  /*===== LINK ACTIVE  =====*
   const linkColor = document.querySelectorAll('.nav__link')
   function colorLink(){
     linkColor.forEach(l=> l.classList.remove('active'))
@@ -22,7 +57,7 @@ const showMenu = (toggleId, navbarId, bodyId)=>{
   linkColor.forEach(l=> l.addEventListener('click', colorLink))
   
   
-  /*===== COLLAPSE MENU  =====*/ 
+  ==== COLLAPSE MENU  ===== 
   const linkCollapse = document.getElementsByClassName('collapse__link')
   var i
   
@@ -35,3 +70,4 @@ const showMenu = (toggleId, navbarId, bodyId)=>{
       rotate.classList.toggle('rotate')
     })
   }
+  */

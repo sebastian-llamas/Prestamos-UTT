@@ -1,37 +1,27 @@
-$(document).ready(){
-  const toggle = document.getElementById(toggleId);
-  const navbar = document.getElementById(navbarId);
-  const bodypadding = document.getElementById(bodyId);
-  const linkCollapse = document.getElementsByClassName('collapse__link');
-  const rotate = collapseMenu.previousElementSibling;
+$(document).ready(function(){
 
-  var active, activeDrop = 0;
-  const showMenu = ()=>{
-    if(active==0){
-      navbar.addClass('expander');
-    
-      bodypadding.addClass('body-pd');
-      
-    }else{
-      if(activeDrop>0){
-        linkCollapse.removeClass('showCollapse'); 
-        rotate.removeClass('rotate')
-      }
-      navbar.removeClass('expander');
-      bodypadding.removeClass('body-pd');
+  $("div.nav__link").hover(function (){
+    $('#navbar').addClass("expander");
+    $('#body-pd').addClass("body-pd");
+  },function () {
+    if($('ul.collapse__menu').hasClass('showCollapse')){
+      $('ul.collapse__menu').removeClass('showCollapse');
     }
-  }
+    $('#navbar').removeClass("expander");
+    $('#body-pd').removeClass("body-pd");
+  });
 
-  const showMenuDrop = ()=>{
-    
-  }
-  
+  $("div.nav__link").click(function () {
+    if($(this).hasClass('showCollapse')){
+      $('ul.collapse__menu').removeClass('showCollapse');
+    }else{
+      if(($('#navbar').hasClass('expander'))){
+      $('ul.collapse__menu').addClass('showCollapse');
+      }
+    }
+  });
 
-
-
-
-}
-
+});
 
 /*const showMenu = (toggleId, navbarId, bodyId)=>{
     const toggle = document.getElementById(toggleId),
